@@ -1,0 +1,75 @@
+Search_Store_Template Test Plan
+
+Add
+	Valid_Inputs (k: Key S:Store)
+		3 , < >
+		"This" , < "is" , "easy" > 
+		C , < A , T , S>
+	Valid_Outputs
+		k = 3 , S = < 3 >
+		k = "This" , S = <"This" , "is" , "easy">
+		k = C  S = <C , A , T , S>
+
+Remove 
+	Valid_Inputs (k: Key S:Store)
+		3 , < 3 > 
+		C , < C , A , T , S >
+		"Hello" , < "Hello" , "Hola" , "Bonjour" >
+	Valid_Outputs 
+		k = 3 , S = < >
+		k = C , S = < A , T , S >
+		k = "Hello" , < "Hola" , "Bonjour" >
+
+Remove_Any 
+	Valid Inputs (k: Key  S:Store)
+		5 , < "Cat" , "Dog" , "Platypus" >
+		c , < A >
+		1 , < 5 , 3  >
+	Valid_Outputs 
+		k = "Cat" S = < "Dog" , "Platypus" OR k = "Dog" S=<"Cat" , "Platypus"> OR 
+			k = "Platypus" S = < "Cat" , "Dog">
+		k = A , S = < >
+		k = 5 , S = < 3 > OR k = 3 , S = < 5 >
+
+Is_Present 
+	valid_inputs (k:Key S:Store)
+		5 , < 1 , 3 , 6 >
+		C , < A , B , C >
+		3 , < >
+	valid_outputs (Is_Present:Boolean)
+		Is_Present = False k =5 S = < 1 , 3 , 6>
+		Is_Present = True k = C S = < A , B ,C >
+		Is_Present = False k = 3 S = < >
+
+Key_Count
+	Valid_Inputs (S:Store)
+		< > 
+		< 1 , 3 , 4 , 5 >
+		< 5 , 2 >
+	Valid_Outputs (Key_Count:Integer)
+		Key_Count = 0 S = < >
+		Key_Count = 4 S = < 1 , 3 ,4 ,5>
+		Key_Count = 2 S = < 5 , 2 >
+
+Rem_Capacity Max_Length = 5
+	Valid_Inputs (S:Store)
+		< >
+		< 1 , 2 ,3>
+		< C , B , E , Q , K>
+	Valid_Outputs (Rem_Capacity:Integer)
+		Rem_Capacity = 5 , S = < >
+		Rem_Capacity = 2 , S = < 1 , 2 , 3 >
+		Rem_Capacity = 0 , S = < C , B , E , Q , K >
+
+Clear 
+	Valid_Inputs (S:Store)
+		< >
+		< 1 , 2 , 3 , 4 , 5 >
+		< A , V , G >
+	Valid_Outputs 
+		S = < >
+		S = < >
+		S = < >
+
+
+

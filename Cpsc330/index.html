@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META name="keywords" content="MPI, Open MPI, Open-MPI, OpenMPI, parallel computing, beowulf, linux, cluster, parallel, distributed">
+  <LINK REL="shortcut icon" HREF="../../../favicon.ico" />
+<STYLE TYPE="text/css">
+BODY          {	background		: white ;
+		color			: black ;
+		font-family		: verdana,arial,helvetica ; 
+		font-size		: 12px ; }
+
+td	      { background-color	: white ; 
+		color			: black ;
+		font-family		: verdana,arial,helvetica ; }
+
+td.buttonbox  {	font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white;
+		background              : url(../../../images/open-mpi-button-bg.gif); }
+
+td.navbarbox  {	font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+		background-color	: #E0E0E0 ; }
+
+td.navbartop  {	font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+		background-color	: #E0E0E0 ; }
+
+td.navbartopabout {
+		height			: 17px ;
+                font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+ 		background-color	: #009000;
+		background-image        : url(../../../images/green-button.gif) ;
+}
+
+td.navbartopusing {
+		height			: 17px ;
+                font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+		background-color	: #b08000;
+		background-image        : url(../../../images/yellow-button.gif) ;
+}
+td.navbartopinstalling {
+		height			: 17px ;
+                font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+		background-color	: #a00000;
+		background-image        : url(../../../images/red-button.gif) ;
+}
+td.navbartopcommunity {
+		height			: 17px ;
+                font-size		: 11px ;
+                font-weight		: bold ;
+		color			: white ;
+		background-color	: #0000a0;
+		background-image        : url(../../../images/blue-button.gif) ;
+}
+
+td.glanceitemsysadmin {
+		background-color	: #b0e0a0;
+}
+td.glanceitemprogrammers {
+		background-color	: #f0e080;
+}
+td.glanceitemusers {
+		background-color	: #ffa080;
+}
+td.glanceitemresearchers {
+		background-color	: #a0b0ff;
+}
+td.glanceitemall {
+  		background-color	: black ;
+		color			: #ffffff;
+}
+
+td.navbarsub  { font-size		: 11px ; 
+                color			: black ;
+                background-color	: #F8F8F8 ; }
+td.navbarsub2 {	font-size		: 11px ; 
+		font-weight		: normal; 
+		color			: black ;
+                background-color	: #F8F8F8 ; }
+td.navbarsub2b {	font-size		: 11px ; 
+		font-weight		: bold; 
+		color			: black ;
+                background-color	: #F8F8F8 ; }
+td.navbarsub3 {	font-size		: 11px ; 
+		font-weight		: normal; 
+		color			: black ;
+                background-color	: #F8F8F8 ; }
+td.quickbar   { font-size		: 11px ; 
+		font-weight		: bold ; 
+		color			: black ;
+		background-color	: #E0E0E0 ; }
+td.footer     { font-size		: 11px ;
+		font-weight		: bold ;
+		color			: black ;
+		background-color	: #E0E0E0 ; }
+
+
+a.navbartop   { text-decoration : none ; color: white ; }
+a.glancetitle { text-decoration : none ; color: black ; }
+a.glanceitem  { text-decoration : none ; color: black ; }
+a.glancetext  { text-decoration : none ; color: black ; }
+a.navbarsub   { text-decoration : none ; color: black ; }
+a.navbarsub2  { text-decoration : none ; color: black ; }
+a.navbarsub2b { text-decoration : none ; color: black ; }
+a.navbarsub3  { text-decoration : none ; color: black ; }
+a.quickbar    { text-decoration : none ; color: black ; }
+
+a.glanceitemsysadmin  { text-decoration : none ; color: black ; }
+a.glanceitemprogrammers  { text-decoration : none ; color: black ; }
+a.glanceitemusers  { text-decoration : none ; color: black ; }
+a.glanceitemresearchers  { text-decoration : none ; color: black ; }
+a.glanceitemall  { text-decoration : none ; color: white ; }
+
+td.logobox  { background          : white ;
+              color               : #FF2222 ; }
+
+td.titlebox { background          : white ;
+              color               : black ; }
+
+td.newsbar   { background-color   : #E0E0E0 ;
+               text-align         : center ;  }
+td.newstitle { background-color   : #DD3333 ;
+               color              : white ;
+               text-align         : center ;  }
+td.newstext  { font-size          : small ; 
+               color              : #333333 ; }
+
+.newstitle {   	color           : #333333 ;
+		font-weight	: bold ;
+		font-size 	: 12px ; }
+.newstext {   	color           : black;
+		font-weight	: normal ;
+		font-size 	: 11px ; }
+
+.glancetitle { font-size	: 14px ;
+		 font-weight	: bold ;
+ 		 background-color   : #A00000 ;
+                 color              : black ;
+                 text-align         : center ;  }
+
+td.glancebox  {	font-size		: 11px ;
+                font-weight		: bold ;
+		color			: black ;
+		background-color	: #F8F8F8 ; }
+
+td.glancetitle { font-size	: 14px ;
+		 font-weight	: bold ;
+                 color              : black ; 
+ 		 background-color   : #F8F8F8 ;
+                 text-align         : left ; }
+
+td.glanceitem {  font-size	: 11px ;
+		 font-weight	: bold ;
+                 color              : black ;
+                 background-color   : #E0E0E0 ;
+                 text-align         : left ;  }
+
+td.glancetext  { font-size          : 11px ; 
+		 font-weight		: normal ;
+                 color              : black ;
+                 background-color   : #F8F8F8 ; }
+
+p.small        { font-size           : small                ;
+                 font-family         : verdana,arial,helvetica ; }
+
+h1.doctitle   { text-align		: left ; }
+
+h3.frontpage    {	margin-bottom : 6px ; 
+		margin-top : 6px ; 
+		font-size: 16px;
+		font-weight: bold;
+}
+h4.frontpage    {	margin-bottom : 3px ; 
+		margin-top : 3px ; 
+		font-size: 14px;
+		font-weight: bold;
+}
+
+td.copyright  { font-size		: 11px ; 
+		font-weight		: bold ; 
+		color			: #333333   ;
+		background-color	: #E0E0E0 ; }
+
+td.mirror     { font-size		: 11px ; 
+		font-weight		: bold ; 
+		color			: #333333   ;
+		background-color	: #E0E0E0 ; }
+
+td.faq_question { font-weight		: bold ; 
+		color			: #333333   ;
+		background-color	: #C0C0C0 ; }
+
+.faq_applies  {	color		: #777777 ; 
+		font-weight     : normal; }
+
+.faq_title    { font-weight		: normal ; 
+		color			: #333333   ; }
+
+.divider    {	color		: #777777 ; 
+		font-family	: Verdana, Arial, sans-serif ; 
+		font-size	: 10px ; 
+		font-weight     : normal; }
+
+input.medium  { width		: 96px ; 
+		height		: 15px ;
+		font-size	: 10px ;
+		text-align	: left ;
+		text-valign	: middle ;
+		padding-top	: 0px ;
+		margin-top	: 0px ;
+		margin-bottom	: 0px ; }
+
+input.buttonred{background	: #C0C0C0 ;
+		cursor		: hand ;
+		color		: #FFFFFF ;
+		height		: 1.3em ;
+		font-weight	: bold ;
+		padding		: 0px ;
+		margin		: 0px ;
+		border		: 0px none #000; }
+
+.quotelev1 {color : #990099}
+.quotelev2 {color : #ff7700}
+.quotelev3 {color : #007799}
+.quotelev4 {color : #95c500}
+
+/*
+DongInn Kim (dikim@indiana.edu) tried to add the following
+style to make the index pages of ompi mail archives a little
+better on Mar 22, 2014.
+The current href links in index pages are too thick and underlined.
+He was not sure if removing the strong boldness and underline
+from the index pages would be better or not but this is
+what he tried.
+li a strong { font-style:normal;
+              font-weight:normal; }
+
+li a { text-decoration: none; }
+td a { text-decoration: none; }
+*/
+
+td.example { background-color : #E0E0E0; }
+</STYLE>
+  <TITLE>Portable Hardware Locality (hwloc): Version 1.10.0</TITLE>
+<meta name="google-site-verification" content="Mo383nPcTIxtCpIPubkJdwBNmCY8iwPIrkxy4n9qBwY" /><script language="JavaScript" type="text/JavaScript">
+<!--
+function contact(host, user, fullname) {
+    var atchar = '@';
+    var thingy = user+atchar+host;
+
+    document.write('<a hre' + 'f=' + "mai" + "lto:" + thingy + ' onClick="_gaq.push([\"_trackEvent\", \"Mails\", \"Click\", "' + thingy + '\"])">' + fullname + '</a>');
+}
+//-->
+</script>
+<bogus not_found=1 />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                                                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                                                                                                          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-2081892-1', 'auto');
+ga('send', 'pageview');
+
+</script></HEAD>
+<BODY>
+<A NAME="top"></A>
+
+<!-- START MAIN TABLE -->
+<TABLE WIDTH="98%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<COLGROUP>
+  <COL width="10%">
+  <COL>
+
+  <!-- Title area -->
+  <TR>
+    <TD class="logobox" VALIGN="center" ALIGN="center" ROWSPAN="2" width="10%">
+      <A HREF="../../../"><IMG SRC="../../../images/open-mpi-logo.png" width="129" height="128" ALT="Open MPI logo" BORDER="0"></A>
+    </TD>
+    <TD VALIGN="center" width="90%" >
+      <H1 CLASS="doctitle">Portable Hardware Locality (hwloc): Version 1.10.0</H1>
+    </TD>
+  </TR>
+
+  <!-- Quick bar -->
+  <TR>
+    <!-- one TD taken by logo -->
+    <TD HEIGHT="1" VALIGN="BOTTOM" width="90%" >
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+    <TR>
+
+    <TD class="quickbar"  VALIGN="top" ALIGN="left" height=16 width="1">
+     <IMG SRC="../../../images/left-e0-2.gif">
+    </TD>
+
+    <TD>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="5">
+      <TR>
+        <form action="../../../includes/do-search.php" topurl="../../.." method="post">
+        <TD class="quickbar" VALIGN="center" ALIGN="right">
+	<span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+	<A HREF="../../../" CLASS="quickbar">Home</A>
+	<span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+	<A HREF="../../../community/help/" CLASS="quickbar"><font color=red>Support</font></A>
+	<span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+	<A HREF="../../../faq/" CLASS="quickbar">FAQ</A> 
+	<span class="divider">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+	<input type=hidden name=site value="www.open-mpi.org">
+<input name="data" type="text" class="medium" size="10" onFocus="if( this.value==this.defaultValue ) this.value='';" value="Search" />
+
+<input id="searchbttn" type="submit" border="0" class="buttonred" value="&nbsp;&raquo;&nbsp;" onmouseover="this.style.color='#fbe249';" onmouseout="this.style.color='#FFF';" />
+       </TD>
+       </form>
+      </TR>
+    </TABLE>
+    </TD>
+
+    <TD class="quickbar"  VALIGN="top" ALIGN="right" height=16 width="1">
+     <IMG SRC="../../../images/right-e0-2.gif">
+    </TD>
+
+    </TR>
+    </TABLE>
+    </TD>
+  </TR>
+
+  <!-- Main row -->
+  <TR>
+    <!-- Navigation bar -->
+    <TD VALIGN="top" CLASS="navbarbox" width="10%">
+      <TABLE WIDTH="100%" BORDER="0" CELLPADDING="1" CELLSPACING="0">
+        <TR>
+          <TD CLASS="navbarbox">
+            <TABLE WIDTH="168px" BORDER="0" CELLPADDING="1" CELLSPACING="1">
+
+<tr><td class="buttonbox">&nbsp;About</td></tr>
+
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../papers/" CLASS="navbarsub" >Publications</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../about/members/" CLASS="navbarsub" >Open MPI Team</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../faq/" CLASS="navbarsub" >FAQ</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../video/" CLASS="navbarsub" >Videos</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../performance/" CLASS="navbarsub" >Performance</A>
+                </TD>
+              </TR>
+<tr><td class="buttonbox">&nbsp;Open MPI Software</td></tr>
+
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../software/" CLASS="navbarsub" >Download</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../doc/" CLASS="navbarsub" >Documentation</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../source/" CLASS="navbarsub" >Source Code Access</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/help/bugs.php" CLASS="navbarsub" >Bug Tracking</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="http://mtt.open-mpi.org/" CLASS="navbarsub" >Regression Testing</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../software/ompi/versions/" CLASS="navbarsub" >Version Information</A>
+                </TD>
+              </TR>
+<tr><td class="buttonbox">&nbsp;Sub-Projects</td></tr>
+
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/hwloc/" CLASS="navbarsub" >Hardware Locality</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/v1.10/" CLASS="navbarsub2">Download v1.10 (stable)</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/v1.9/" CLASS="navbarsub2">Download v1.9 (old)</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/v1.8/" CLASS="navbarsub2">Download v1.8 (older)</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/v1.7/" CLASS="navbarsub2">Download v1.7 (ancient)</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/ancient/" CLASS="navbarsub2">Download ancient</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../projects/hwloc/doc/" CLASS="navbarsub2">Documentation</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../projects/hwloc/tutorials/" CLASS="navbarsub2">Tutorials</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../projects/hwloc/license.php" CLASS="navbarsub2">License</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../community/lists/hwloc.php" CLASS="navbarsub2">Mailing lists</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="https://github.com/open-mpi/hwloc/issues" CLASS="navbarsub2">Bug tracking</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../projects/hwloc/git.php" CLASS="navbarsub2">Git access</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="../../../software/hwloc/nightly/" CLASS="navbarsub2">Nightly snapshots</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/netloc/" CLASS="navbarsub" >Network Locality</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/mtt/" CLASS="navbarsub" >MPI Testing Tool</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/user-docs/" CLASS="navbarsub" >Open MPI User Docs</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/otpo/" CLASS="navbarsub" >Open Tool for Parameter Optimization</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/pmix/" CLASS="navbarsub" >PMIx</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../projects/orcm/" CLASS="navbarsub" >ORCM</A>
+                </TD>
+              </TR>
+<tr><td class="buttonbox">&nbsp;Community</td></tr>
+
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/lists/" CLASS="navbarsub" >Mailing Lists</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/help/" CLASS="navbarsub" ><font color=red>Getting Help/Support</font></A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/contribute/" CLASS="navbarsub" >Contribute</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/mirrors/" CLASS="navbarsub" >Mirrors</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/contact.php" CLASS="navbarsub" >Contact</A>
+                </TD>
+              </TR>
+              <TR>
+                <TD class="navbarsub">
+                  &nbsp;&nbsp;<A HREF="../../../community/license.php" CLASS="navbarsub" >License</A>
+                </TD>
+              </TR>
+<tr><td class="buttonbox">&nbsp;</td></tr>
+
+            </TABLE>
+          </TD>
+        </TD>
+      </TABLE>
+    </TD>
+
+    <!-- Main text box -->
+    <TD VALIGN="top" width="90%" >
+      <TABLE WIDTH="100%" BORDER="0" CELLPADDING="6" CELLSPACING="0">
+        <TR>
+          <TD>
+      <TABLE WIDTH="100%" BORDER="0" CELLPADDING="4" CELLSPACING="0">
+      <COLGROUP>
+      <COL>
+        <TR>
+          <TD>
+          <!-- BEGIN MAIN TEXT -->
+<form action="../../../subscribe-announce.php" method=post>
+<div align=center>
+<p>Enter your e-mail address to be notified when new
+releases of hwloc are released<br />
+<input type="email" placeholder="Your email address" name=email size=30>
+<input type="hidden" name="prev_describe" value="the v1.10.0 download page">
+<input type="hidden" name="prev_url" value="/software/hwloc/v1.10/index.php">
+<input type="hidden" name="project" value="hwloc">
+<input type="hidden" name="list_name" value="hwloc-announce">
+<input type="submit" value="&nbsp;&raquo;&nbsp;"><br />
+
+Your email address will be used only to send you announcements about
+new releases of hwloc and you will be able to
+un-subscribe at any time.  
+
+</div>
+</form>
+
+<p><hr>
+
+<p>hwloc is distributed under the <a href="../../../projects/hwloc/license.php">BSD license</a>.
+</p>
+
+<P><a href="https://raw.github.com/open-mpi/hwloc/v1.10/NEWS">This
+file</a> contains a list of changes between the releases in the hwloc
+releases in the v1.10 series</p>
+
+<p>Current stable release:</p>
+
+<p>
+<div align=center>
+
+<TABLE BORDER=1 CELLPADDING=5>
+<TR>
+<TH>Contents</TH>
+<TH>File names</TH>
+<TH>Size</TH>
+<TH>Date</TH>
+<TH>Checksums (GNU md5sum and sha1sum v5.2.1)</TH>
+</TR>
+
+<TR>
+<TD ROWSPAN=4>Version 1.10.0</TD>
+<TD><A HREF="./downloads/hwloc-win64-build-1.10.0.zip">hwloc-win64-build-1.10.0.zip</A></TD>
+<TD ALIGN=RIGHT>4.39MB</TD>
+<TD ALIGN=RIGHT>Oct 7, 2014</TD>
+<TD><TABLE BORDER=0>
+<TR>
+<TD ALIGN=RIGHT>MD5:</TD>
+<TD>d26ecaecc440aef5266af2dabae41357</TD></TR><TR>
+<TD ALIGN=RIGHT>SHA1:</TD>
+<TD>9866db64873910343e48869b8958f9b2156e0efa</TD></TR></TABLE></TD></TR>
+
+<TR>
+<TD><A HREF="./downloads/hwloc-win32-build-1.10.0.zip">hwloc-win32-build-1.10.0.zip</A></TD>
+<TD ALIGN=RIGHT>3.49MB</TD>
+<TD ALIGN=RIGHT>Oct 7, 2014</TD>
+<TD><TABLE BORDER=0>
+<TR>
+<TD ALIGN=RIGHT>MD5:</TD>
+<TD>5ebb362484b73763d20747604c0f1151</TD></TR><TR>
+<TD ALIGN=RIGHT>SHA1:</TD>
+<TD>8aba3d128fca18967ed704f31e2f4a002bf57ac5</TD></TR></TABLE></TD></TR>
+
+<TR>
+<TD><A HREF="./downloads/hwloc-1.10.0.tar.bz2">hwloc-1.10.0.tar.bz2</A></TD>
+<TD ALIGN=RIGHT>3.59MB</TD>
+<TD ALIGN=RIGHT>Oct 7, 2014</TD>
+<TD><TABLE BORDER=0>
+<TR>
+<TD ALIGN=RIGHT>MD5:</TD>
+<TD>c0502d93b1b8800cde28f84010bccfe0</TD></TR><TR>
+<TD ALIGN=RIGHT>SHA1:</TD>
+<TD>1d232af79a18db9b62564c44415d4129cb491292</TD></TR></TABLE></TD></TR>
+
+<TR>
+<TD><A HREF="./downloads/hwloc-1.10.0.tar.gz">hwloc-1.10.0.tar.gz</A></TD>
+<TD ALIGN=RIGHT>3.95MB</TD>
+<TD ALIGN=RIGHT>Oct 7, 2014</TD>
+<TD><TABLE BORDER=0>
+<TR>
+<TD ALIGN=RIGHT>MD5:</TD>
+<TD>5790acfbb02c66671447815ae4765d56</TD></TR><TR>
+<TD ALIGN=RIGHT>SHA1:</TD>
+<TD>5a129fa03339bf6ad41a6ef3cbbad37da7033e8b</TD></TR></TABLE></TD></TR>
+
+</TABLE>
+
+</div>
+
+</div>
+</p>
+
+
+	  <!-- END MAIN TEXT -->
+	  </TD>
+        </TR>
+      </TABLE>
+          </TD>
+        </TD>
+      </TABLE>
+    </TD>
+  </TR>
+
+  <!-- footer row -->
+  <TR>
+  <TD COLSPAN="2">
+      <TABLE WIDTH="100%" BORDER="0" CELLPADDING="8" CELLSPACING="0">
+      <COLGROUP>
+      <COL>
+      <COL>
+      <COL>
+        <TR>
+          <TD class="footer" ALIGN="LEFT" height="36">
+            <TABLE>
+<TR>
+<TD VALIGN="MIDDLE" CLASS="footer"><A HREF="../../../community/mirrors/"><IMG SRC="../../../community/mirrors/flag-us.gif" width="48" height="32" ALT="[Flag]" BORDER="0"></A><BR>
+</TD>
+<TD VALIGN="MIDDLE" CLASS="footer">Indiana&nbsp;University&nbsp;(Main&nbsp;Open&nbsp;MPI&nbsp;server)<BR />
+This&nbsp;site&nbsp;is&nbsp;located&nbsp;in: Bloomington,&nbsp;IN,&nbsp;USA
+</TD>
+</TR>
+</TABLE>
+
+          </TD>
+          <TD class="footer" ALIGN="CENTER" height="36">
+            <script language="JavaScript" type="text/JavaScript">
+<!--
+function contact(host, user, fullname) {
+    var atchar = '@';
+    var thingy = user+atchar+host;
+
+    document.write('<a hre' + 'f=' + "mai" + "lto:" + thingy + ' onClick="_gaq.push([\"_trackEvent\", \"Mails\", \"Click\", "' + thingy + '\"])">' + fullname + '</a>');
+}
+//-->
+</script>
+<script language="javascript">contact("open-mpi.org", "www", "Contact webmaster");</script>          </TD>
+          <TD class="footer" ALIGN="RIGHT" height="36">
+Page last modified: 7-Oct-2014<br>
+&copy;2004-2014 The Open MPI Project
+<br>
+          </TD>
+        </TR>
+      </TABLE>
+
+    <!-- END MAIN TABLE -->
+    </TD>
+  </TR>
+</TABLE>
+<BR>
+</BODY>
+</HTML>

@@ -1,0 +1,55 @@
+
+Facility Queue_Test_Facility;
+    uses String_Theory;
+    
+    Facility Queue_Test_Fac is Queue_Template(Char_Str, 3)
+		realized by Circular_Array_Realiz;
+		
+	
+	--OPERATIONS HERE
+    Operation Write_Part_Queue(evaluates Num: Integer; updates Q: Queue);
+        requires 0 <= Num and Num <= |Q|;
+    Procedure
+        Var CS: Char_Str;
+        Var I : Integer;
+        I := 0;
+
+        While(I < Num)
+            changing Q, CS, I;
+            maintaining |Q| = |#Q| - I  and I <= |#Q| 
+                and I >= 0;
+            decreasing |Q|;
+        do
+            Dequeue(CS, Q);
+            Write_Line(CS);
+            I := I + 1;
+        end;
+
+    end Write_Part_Queue;
+
+    Operation Copy_Queue(restores Q: Queue; replaces Q_Copy: Q_Copy);
+        requires Q > 0;
+    Procedure
+        Var CS1,C: Char_Str;
+        Var I,L: Integer;
+        
+        L := Length(Q);
+        I := 0;
+    
+        While(I < L)
+        
+        do
+            
+	    end;
+    
+    end Copy_Queue;
+	
+	Operation Main();
+	Procedure
+		--Var Q: Queue;
+		
+	    --Enqueue("test", Q);
+		
+		--Write_Part_Queue(1, Q);
+	end Main;
+end Queue_Test_Facility;

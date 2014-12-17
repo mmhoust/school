@@ -1,0 +1,23 @@
+Readme
+
+Matthew Houston
+
+For this program the design flow is as follows
+
+1. Parse flags
+2. Makerequest
+	a. makeheader
+	b. convertFromDns
+	c. addPostflags
+3. Setup sockets to send and recieve messages.
+4. send Message
+5. Recieve message
+6. read Header
+7. check flags for errors
+8. for each answer read message
+	a. readName
+	b. convertFromDNS for name
+	c. get Type class TTL and datalength
+	d. if Type == CNAME
+		i. readName
+		2. print 

@@ -1,0 +1,73 @@
+
+Part 1
+
+Machine (P#0 total=8388608KB CPUModel="Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz" Backend=Darwin OSName=Darwin OSRelease=13.3.0 OSVersion="Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64" HostName=Matthews-MacBook-Pro.local Architecture=x86_64 Backend=x86)
+  NUMANode L#0 (P#0 local=8388608KB total=8388608KB)
+    L3Cache L#0 (P#0 size=6144KB linesize=64)
+      L2Cache L#0 (P#0 size=256KB linesize=64 ways=8)
+        L1dCache L#0 (P#0 size=32KB linesize=64)
+          L1iCache L#0 (P#0 size=32KB linesize=64)
+            Core L#0 (P#0)
+              PU L#0 (P#0)
+              PU L#1 (P#1)
+      L2Cache L#1 (P#1 size=256KB linesize=64 ways=8)
+        L1dCache L#1 (P#1 size=32KB linesize=64)
+          L1iCache L#1 (P#1 size=32KB linesize=64)
+            Core L#1 (P#1)
+              PU L#2 (P#2)
+              PU L#3 (P#3)
+      L2Cache L#2 (P#2 size=256KB linesize=64 ways=8)
+        L1dCache L#2 (P#2 size=32KB linesize=64)
+          L1iCache L#2 (P#2 size=32KB linesize=64)
+            Core L#2 (P#2)
+              PU L#4 (P#4)
+              PU L#5 (P#5)
+      L2Cache L#3 (P#3 size=256KB linesize=64 ways=8)
+        L1dCache L#3 (P#3 size=32KB linesize=64)
+          L1iCache L#3 (P#3 size=32KB linesize=64)
+            Core L#3 (P#3)
+              PU L#6 (P#6)
+              PU L#7 (P#7)
+depth 0:	1 Machine (type #1)
+ depth 1:	1 NUMANode (type #2)
+  depth 2:	1 L3Cache (type #4)
+   depth 3:	4 L2Cache (type #4)
+    depth 4:	4 L1dCache (type #4)
+     depth 5:	4 L1iCache (type #4)
+      depth 6:	4 Core (type #5)
+       depth 7:	8 PU (type #6)
+8 processors not represented in topology: 0x0000ff00
+
+Part 2
+
+for 1000 ijk$
+
+for mm algorithm ijk utime is       7.71 secs
+ mflops is     259.26
+
+for 1000 ikj$ 
+
+for mm algorithm ikj utime is       0.49 secs
+ mflops is    4102.11
+
+for 8d8f4j2ik$
+
+ for mm algorithm 8d8f4j2ik utime is       0.28 secs
+ mflops is    7191.27
+
+ for  8d8e8f2i2jk$
+
+ for mm algorithm 8d8e8f2i2jk utime is       0.61 secs
+ mflops is    3269.18
+
+The MFLOPS rating goes down when so dramatically when loop size increases is because there are more page misses and caches misses brought on by allignment issues 
+
+part 3 
+
+
+
+                         misses     mem refs   (hit rate)
+    320 ijk$             33444998   65638400    49.05%
+    320 ikj$             4134722    65740800    93.71%
+    320 8d8f4j2ik$       1062963    32870400    96.77% 
+    320 8d8e8f2i2jk$     1242363    41062400    96.97%
